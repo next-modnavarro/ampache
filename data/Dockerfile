@@ -2,7 +2,7 @@ FROM php:5.6-fpm
 
 MAINTAINER MOD <navarro.mod@gmail.com>
 
-RUN set -ex DEBIAN_FRONTEND=noninteractive \
+RUN set -ex DEBIAN_FRONTEND=noninteractive && \
  apt-get update && \
  apt-get install -qyy -o APT::Install-Recommends=false -o APT::Install-Suggests=false \
  git wget gettext-base && \
