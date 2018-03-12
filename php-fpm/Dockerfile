@@ -3,7 +3,7 @@ FROM php:5.6-fpm
 MAINTAINER MOD <navarro.mod@gmail.com>
 
 USER root
-RUN set -ex DEBIAN_FRONTEND=noninteractive \
+RUN set -ex DEBIAN_FRONTEND=noninteractive && \
  apt-get update && apt-get install -qyy -o APT::Install-Recommends=false -o APT::Install-Suggests=false \
   libpng12-dev libjpeg-dev zip unzip libfreetype6-dev && \
 	rm -rf /var/lib/apt/lists/* && apt-get clean \
