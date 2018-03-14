@@ -24,8 +24,7 @@ MYSQL_PASSWORD=
 HTTP_PORT=8011  
 HTTPS_PORT=443  
 SECRET_KEY=  
- CATALOG_PATH=  
-
+CATALOG_PATH=  
 
 Build & deploy: docker-compose up --build nginx
 
