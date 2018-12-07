@@ -32,4 +32,4 @@ Post-install steps:
 
 docker-compose exec php-fpm php /var/www/html/ampache/bin/install/update_db.inc -u
 
-docker-compose -p subsonic exec php-fpm php  /var/www/html/ampache/bin/install/add_user.inc -u xxxx -p xxxx -l admin -n administratordocker-compose -p subsonic exec php-fpm php  /var/www/html/ampache/bin/install/add_user.inc -u XXX -p XXX -l admin -n administrator
+docker-compose -p subsonic exec php-fpm php  /var/www/html/ampache/bin/install/add_user.inc -u xxxx -p xxxx -l admin -n administrator
