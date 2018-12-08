@@ -20,7 +20,7 @@ RUN php installer --quiet
 
 RUN mv composer.phar /usr/local/bin/composer
 
-RUN git clone https://github.com/ampache/ampache.git --branch ${AMPACHE_VERSION} ampache
+RUN git clone https://github.com/ampache/ampache.git --branch ${AMPACHE_VERSION} ampache && \
  chown -R www-data:www-data /usr/src/ && \
  apt-get clean && \
  rm -rf /var/lib/apt/lists/* && \
