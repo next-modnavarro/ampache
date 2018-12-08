@@ -6,7 +6,7 @@ ARG AMPACHE_VERSION=4.0.0-pre-release
 
 RUN set -ex DEBIAN_FRONTEND=noninteractive && \
  apt-get update && \
- apt-get install -qyy -o APT::Install-Recommends=false -o APT::Install-Suggests=false git libgd3 libjpeg62-turbo-dev  libpng-dev libfreetype6-dev libgmp10-dev && \
+ apt-get install -qyy -o APT::Install-Recommends=false -o APT::Install-Suggests=false git gettext-base libgd3 libjpeg62-turbo-dev  libpng-dev libfreetype6-dev libgmp10-dev && \
  docker-php-ext-configure gd --with-png-dir=/usr --with-jpeg-dir=/usr --with-freetype-dir=/usr --enable-gd-native-ttf && \
  docker-php-ext-install gd && \
  docker-php-ext-configure gmp && \
