@@ -16,7 +16,7 @@ RUN set -ex DEBIAN_FRONTEND=noninteractive && \
  apt-get clean && \
  rm -rf /var/lib/apt/lists/*
 
-WORKDIR /var/www/html/ampache
+WORKDIR /usr/src/ampache
 
 USER www-data
 
