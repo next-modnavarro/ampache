@@ -10,9 +10,9 @@ RUN set -ex DEBIAN_FRONTEND=noninteractive && \
  git wget gettext-base && \
  wget https://raw.githubusercontent.com/composer/getcomposer.org/1b137f8bf6db3e79a38a5bc45324414a6b1f9df2/web/installer /tmp -O - -q | php -- --quiet && \
  mv composer.phar /usr/local/bin/composer && \
- wget https://github.com/ampache/ampache/archive/${AMPACHE_VERSION}.tar.gz -O - -q | tar -C /var/www/html -xvzf - && \
- mv /var/www/html/ampache-${AMPACHE_VERSION} /var/www/html/ampache && \
- chown -R www-data:www-data /var/www/ && \
+ wget https://github.com/ampache/ampache/archive/${AMPACHE_VERSION}.tar.gz -O - -q | tar -C /usr/src/ -xvzf - && \
+ mv /usr/src/ampache-${AMPACHE_VERSION} /usr/src/ampache && \
+ chown -R www-data:www-data /usr/src/ && \
  apt-get clean && \
  rm -rf /var/lib/apt/lists/*
 
