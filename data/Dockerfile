@@ -2,7 +2,7 @@ FROM php:7.2-fpm
 
 MAINTAINER MOD <navarro.mod@gmail.com>
 
-ARG AMPACHE_VERSION=4.0.0-pre-release
+ARG AMPACHE_VERSION=laravel
 
 RUN set -ex DEBIAN_FRONTEND=noninteractive && \
  apt-get update && \
@@ -20,10 +20,7 @@ RUN php installer --quiet
 
 RUN mv composer.phar /usr/local/bin/composer
 
-ADD https://github.com/ampache/ampache/archive/${AMPACHE_VERSION}.tar.gz /tmp/
-
-RUN tar -C /usr/src/ -xvf /tmp/${AMPACHE_VERSION}.tar.gz  && \
- mv /usr/src/ampache-${AMPACHE_VERSION}/ /usr/src/ampache && \
+RUN git clone https://github.com/ampache/ampache.git --branch ${AMPACHE_VERSION} ampache
  chown -R www-data:www-data /usr/src/ && \
  apt-get clean && \
  rm -rf /var/lib/apt/lists/* && \

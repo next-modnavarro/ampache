@@ -8,7 +8,7 @@ Preconfigure: place an .env file in the same directory than docker-compose.yml f
 REPO=https://github.com/ampache/ampache.git  
 AMPACHE_DOMAIN=<your.domain>  
 DNS_ADMIN_MAIL=<yourmail at your domain>  
-SRC_PATH=/var/www/html/ampache  
+SRC_PATH=/usr/src/ampache  
 CERTS_PATH=/etc/ssl/nginx  
 AWS_ACCESS_KEY_ID=  
 AWS_SECRET_ACCESS_KEY=  
@@ -30,6 +30,8 @@ Build & deploy: docker-compose up --build nginx
 
 Post-install steps:
 
-docker-compose exec php-fpm php /var/www/html/ampache/bin/install/update_db.inc -u
+docker-compose exec php-fpm php ${SRC_PATH}/artisan ampache:install
 
-docker-compose -p subsonic exec php-fpm php  /var/www/html/ampache/bin/install/add_user.inc -u xxxx -p xxxx -l admin -n administrator
+docker-compose exec php-fpm php ${SRC_PATH}/bin/install/update_db.inc -u
+
+docker-compose -p subsonic exec php-fpm php  ${SRC_PATH}/bin/install/add_user.inc -u xxxx -p xxxx -l admin -n administrator
