@@ -12,7 +12,8 @@ RUN set -ex DEBIAN_FRONTEND=noninteractive && \
  mv composer.phar /usr/local/bin/composer && \
  wget https://github.com/ampache/ampache/archive/${AMPACHE_VERSION}.tar.gz -O - -q | tar -C /usr/src/ -xvzf - && \
  mv /usr/src/ampache-${AMPACHE_VERSION} /usr/src/ampache && \
- chown -R www-data:www-data /usr/src/ && \
+ mkdir -p /var/www && \
+ chown -R www-data:www-data /usr/src/ /var/www/ && \
  apt-get clean && \
  rm -rf /var/lib/apt/lists/*
 
