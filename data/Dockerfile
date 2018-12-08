@@ -1,4 +1,4 @@
-FROM php:7
+FROM php:7.2-fpm
 
 MAINTAINER MOD <navarro.mod@gmail.com>
 
