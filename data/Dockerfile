@@ -26,4 +26,4 @@ WORKDIR /
 
 ADD resources/resources.tgz /
 
-VOLUME /var/www/html/ampache
+VOLUME /usr/src/ampache
